@@ -1,0 +1,40 @@
+body {
+    width: 700px;
+    background-color: #e4e978;
+    padding: 15px;
+}
+
+article {
+    background-color: #f2f4c0;
+    border: 1px solid #4c7658;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+
+}
+
+section {
+    font-style: italic;
+    color: #5c6e91;
+}
+
+section h1 {
+    background-color: #f2f4c0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    padding: 15px 15px 5px 15px;
+    border: 1px solid #4c7658;
+    border-bottom: none;
+}
+
+
+
+section > article:nth-child(2){
+    border-top: none;
+}
+
+body > section > article:nth-child(2) > h2{
+    margin-top: 0px;
+}
