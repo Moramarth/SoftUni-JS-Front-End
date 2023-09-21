@@ -1,0 +1,107 @@
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+body {
+    padding: 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Georgia, serif;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 3.2em;
+}
+
+h2 {
+    font-size: 2.4em;
+    line-height: 2.6em;
+}
+
+h3 {
+    font-size: 1.8em;
+    line-height: 2em;
+}
+
+h4 {
+    font-size: 1.4em;
+    line-height: 1.6em;
+}
+
+h5 {
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1.4em;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.2em;
+}
+
+p {
+    padding-bottom: 1em;
+}
+
+hr {
+    margin: 2em 0;
+}
+
+blockquote {
+    border-left: 5px solid rgb(221, 221, 221);
+    font-style: italic;
+    padding: 5px 40px;
+}
+
+blockquote>p:last-child {
+    text-align: right;
+}
+
+ul {
+    list-style-type: square;
+}
+
+ul:not(:child),
+ol:not(:child) {
+    padding-bottom: 1em;
+}
+
+ul ul {
+    list-style-type: disc;
+}
+
+ul ul ul {
+    list-style-type: circle;
+}
+
+th {
+    background-color: #cccccc;
+}
+
+tr:nth-child(2n-1) {
+    background-color: #f1f1f1;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    text-align: left;
+}
+
+table,
+th,
+tr,
+td {
+    border: 1px solid #cccccc;
+    border-collapse: collapse;
+}
