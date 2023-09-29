@@ -1,0 +1,24 @@
+html {
+    font-family:  Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    color: rgb(51, 51, 51);
+}
+
+article,
+aside {
+    display: inline-block;
+    vertical-align: top;
+}
+article {
+    width: 65%;
+}
+aside {
+    width: 25%;
+}
+img {
+    width: 70%;
+    height:auto;
+}
