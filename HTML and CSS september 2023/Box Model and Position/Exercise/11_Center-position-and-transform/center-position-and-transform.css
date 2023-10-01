@@ -1,0 +1,63 @@
+html {
+    font-family: Georgia, serif;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    margin: 0;
+    padding: 2em;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    background-color: rgb(0, 153, 0);
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+}
+
+p {
+    padding-bottom: 4em;
+}
+
+.card {
+    position: relative;
+    display: block;
+    background-color: white;
+    width: 35%;
+    border-radius: 0.3em;
+    overflow: hidden;
+    box-shadow: rgb(0, 0, 0, 0.2) 0 0 0.4em 0.4em;
+}
+
+.card div:first-child {
+    overflow: hidden;
+    position: relative;
+}
+
+
+img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.after {
+    padding-top: 56.25%;
+}
+
+body > section > div:nth-child(2) {
+    padding: 1em;
+}

@@ -1,0 +1,72 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+
+body {
+    margin: 0;
+}
+
+.viewport {
+    height: 100vh;
+    color: white;
+    position: relative;
+}
+
+.viewport:first-child {
+    top: 0;
+    background: linear-gradient(to right, rgba(37, 141, 200, 1) 0%,
+            rgba(38, 190, 204, 1) 45%,
+            rgba(38, 201, 160, 1) 75%,
+            rgba(38, 201, 144, 1) 90%);
+
+}
+
+.viewport:last-child {
+    top: 50%;
+    background: linear-gradient(to right, rgb(175, 63, 105) 0%,
+            rgb(188, 88, 72) 40%,
+            rgb(189, 107, 45) 51%,
+            rgba(199, 108, 47, 1) 85%,
+            rgb(207, 125, 27) 100%);
+}
+
+.card {
+    position: absolute;
+    width: 25%;
+    border-radius: 0.3em;
+    overflow: hidden;
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    box-shadow: 0 0 1em 0.2em rgb(0, 0, 0, 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+i {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+}
+
+.inner-shadow {
+    display: block;
+    background: rgb(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 1em 0.5em rgb(0, 0, 0, 0.5) inset;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.card:hover .inner-shadow {
+    opacity: 0;
+}
