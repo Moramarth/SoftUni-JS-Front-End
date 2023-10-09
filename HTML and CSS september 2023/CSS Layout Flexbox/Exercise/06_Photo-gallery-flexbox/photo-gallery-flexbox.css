@@ -1,0 +1,36 @@
+html {
+    box-sizing: border-box;
+}
+
+body,
+ul,
+li {
+    display: flex;
+}
+
+body {
+    padding: 5rem;
+    background-color: #EEE;
+}
+
+ul {
+    justify-content: space-between;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+li {
+    border: 6px solid black;
+    background-color: white;
+    align-items: center;
+    padding: 2rem;
+    flex: 1 1 25%;
+    box-shadow:
+        0 0 1.2em 0.2em rgba(0, 0, 0, 0.3),
+        0 0 0.3em 0.1em rgba(0, 0, 0, 0.3) inset;
+}
+
+img {
+    display: block;
+    width: 100%;
+}

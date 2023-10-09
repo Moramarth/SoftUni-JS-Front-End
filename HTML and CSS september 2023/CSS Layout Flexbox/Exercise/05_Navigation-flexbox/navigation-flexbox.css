@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin:0;
+}
+
+body {
+    padding: 4rem;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+p {
+    padding-bottom: 1.5rem;
+}
+
+header {
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+
+}
+
+header p {
+    font-size: 3rem;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+}
+
+header li {
+    list-style: none outside;
+    padding: 0 1rem;
+}
+
+header a {
+    text-decoration: none;
+    color: rgb(0, 153, 0);
+}
