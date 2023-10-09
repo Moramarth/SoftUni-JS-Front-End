@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    padding: 2em 10em;
+}
+
+h1,
+h2,
+h3,
+blockquote {
+    font-family: Georgia, serif;
+}
+
+h1,
+h2,
+h3 {
+    font-size: 1em;
+    line-height: 1.2em;
+    padding: 1.5em 0;
+}
+
+img {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 1em 0.1em rgba(0, 0, 0, 0.25);
+    padding: 0.5em;
+    border: 3px solid black;
+}
+
+a {
+    color: rgb(0, 102, 0);
+    text-decoration: none;
+}
+
+body>header {
+    position: relative;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.5em;
+}
+
+body>header p,
+body>header nav,
+body>header ul,
+body>header li {
+    display: inline-block;
+}
+
+body>header p {
+    font-size: 3em;
+    font-family: sans-serif;
+}
+
+body>header>nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(50%);
+}
+
+body>header>nav li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 0.5em;
+}
+
+main,
+aside {
+    display: inline-block;
+    vertical-align: top;
+}
+
+main {
+    width: 70%;
+}
+
+main p {
+    padding-bottom: 1.5em;
+}
+
+body > main > article:nth-child(2) > section > p:nth-child(2) {
+    display: inline-block;
+    width:45%;
+}
+
+
+blockquote {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    border-left: 3px solid lightgray;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    padding: 0 0 1em 2em;
+    font-style: oblique;
+    color: rgba(180, 180, 180);
+
+}
+
+blockquote > p:last-child {
+    text-align: right;
+}
+
+
+aside {
+    margin-left: 2em;
+    padding-left: 2em;
+}
+
+aside h3 {
+    font-weight: 500;
+}
+
+aside nav {
+    margin-left: 2em;
+}
+
+
+[class^="align"] {
+    margin-bottom: 1em;
+}
+
+.align-right {
+    float: right;
+    margin-left: 1em;
+}
+
+.align-left {
+    float: left;
+    margin-right: 1em;
+}
