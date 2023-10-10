@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    padding: 1rem 5rem;
+}
+
+h1,
+h2,
+h3,
+blockquote {
+    font-family: Georgia, serif;
+}
+
+img {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    box-shadow: 0 0 1em 0.1em rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+}
+
+a {
+    color: rgb(0, 153, 0);
+}
+
+header {
+    flex-basis: 100%;
+    border-bottom: 2px solid black;
+}
+
+main {
+    flex: 8 1 40rem;
+}
+
+aside {
+    flex: 2 1 20rem;
+}
+
+header p {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+blockquote {
+    font-style: oblique;
+    border-left: 2px solid rgb(180, 180, 180);
+    color: rgb(180, 180, 180);
+    padding-left: 2rem;
+    margin: 0 0 2rem 2rem;
+}
+
+blockquote>p:last-child {
+    text-align: end;
+}
+
+.page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 5rem;
+}
+
+main>article:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main>article:nth-child(2)>p:nth-child(2),
+main>article:nth-child(2)>p:nth-child(5) {
+    flex-basis: 100%;
+}
+
+main>article:nth-child(2)>p:nth-child(3),
+main>article:nth-child(2)>blockquote {
+    flex-basis: 40%;
+}
+
+[class^=align] {
+    margin-bottom: 2rem;
+}
+
+.align-right {
+    float: right;
+    margin-left: 2rem;
+}
+
+.align-left {
+    float: left;
+    margin-right: 2rem;
+}

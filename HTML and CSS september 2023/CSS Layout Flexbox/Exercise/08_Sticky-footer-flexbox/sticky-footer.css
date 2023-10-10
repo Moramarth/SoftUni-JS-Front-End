@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: rgb(238, 238, 238);
+    height: 100vh;
+    border: 2px solid black;
+    margin: 0
+}
+
+header,
+main,
+footer {
+    padding: 0.5rem 2rem;
+}
+
+header {
+    border-bottom: 2px solid black;
+    text-transform: uppercase;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    color: rgb(255, 255, 255);
+    background-color: rgb(102, 102, 102);
+}
