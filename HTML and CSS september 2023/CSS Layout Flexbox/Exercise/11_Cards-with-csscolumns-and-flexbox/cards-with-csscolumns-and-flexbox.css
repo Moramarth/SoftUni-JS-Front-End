@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+.cards-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    max-width: 40em;
+    margin: 2em auto;
+}
+
+.card {
+
+    background-color: white;
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 0.3em;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 1em 0.2em rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card section,
+.card footer {
+    padding: 1em 1.2em;
+}
+
+.card section {
+    flex: 1 0 auto;
+}
+
+.card footer {
+    border-top: 2px solid #CCC;
+}

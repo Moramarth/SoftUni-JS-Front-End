@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    background-color: rgb(238, 238, 238);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.container,
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+li {
+    display: block;
+    width: 10em;
+    height: 25em;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 0.5em;
+    box-shadow: 0 0 1em 0.3em rgb(0, 0, 0, 0.2);
+    transition: width 0.3s ease-in-out;
+}
+
+
+img {
+    display: block;
+    width: auto;
+    height: 100%;
+    border-radius: 0.5em;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease-in-out;
+}
+
+li:hover {
+    width: 35em;
+}
+
+img:hover {
+    transform: translateX(0);
+}
