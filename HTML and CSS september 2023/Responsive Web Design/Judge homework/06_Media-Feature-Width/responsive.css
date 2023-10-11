@@ -1,0 +1,20 @@
+article {
+  width: 360px;
+  color: red;
+  border: 1px solid blue;
+}
+
+@media (min-width: 35rem) {
+  article {
+    background-color: yellow;
+    border: none;
+    color: black;
+  }
+}
+
+@media (max-width: 50rem) {
+
+  article {
+    border: 2px solid blue;
+  }
+}
