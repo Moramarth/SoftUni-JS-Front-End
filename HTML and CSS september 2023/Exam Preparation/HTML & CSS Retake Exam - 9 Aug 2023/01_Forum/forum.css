@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Inter, sans-serif ;
+}
+
+body {
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2em;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+article {
+    background-color: white;
+    display: flex;
+    padding: 2em;   
+}
+
+.wrapper {
+    display: flex;
+    gap: 2em;
+    max-width: 80em;
+    margin:0 auto;
+}
+
+.horizontal {
+    display: flex;
+    gap:2em;
+    flex-direction: column;
+    flex: 2;
+}
+
+.vertical {
+    display:flex;
+    flex: 1;
+}
+
+.horizontal article {
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.horizontal .photo {
+    width: 20em;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.vertical article {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.verticle article content  {
+    align-self: flex-start;
+}
+
+.vertical article footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex: none;
+    border-top: 1px solid black;
+    padding: 2em 0;
+    gap: 1em;
+    align-items: center;
+}
+
+.vertical img {
+    max-width: 5em;
+    height: auto;
+}
