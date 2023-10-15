@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    padding: 2em;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 1em;
+    line-height: 1.2;
+    padding: 1em 0;
+}
+
+p {
+    padding-bottom: 1.5em;
+}
+div {
+    background-color: white;
+    width: 100%;
+}
+
+button {
+    background-color: rgb(0, 153, 0);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    max-width: 25em;
+    border-radius: 0.3em;
+    overflow: hidden;
+    box-shadow: 0 0 0.3em 0.3em rgb(0, 0, 0, 0.4);
+}
+
+img {
+    width: 100%;
+    object-position: center;
+}
+
+section .content {
+    padding: 2em 1em;
+    position: relative;
+    width: 100%;
+}
+
+button {
+    all:unset;
+    position: absolute;
+    right: 3em;
+    bottom:1em;
+    background-color: rgb(0, 153, 0);
+    color: white;
+    border-radius: 0.3em;
+    padding: 0.3em 0.6em;
+    border-color: rgb(0, 153, 0);
+    text-align: center;
+}
+
+
+@media (max-width:500px) {
+    .content {
+        text-align: center;
+    }
+
+    button {
+        position: static;
+    }
+}

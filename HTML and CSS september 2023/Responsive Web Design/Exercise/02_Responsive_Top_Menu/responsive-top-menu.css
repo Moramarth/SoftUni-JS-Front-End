@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    padding: 3em;
+    max-width: 800px;
+    margin: 2em auto;
+}
+
+body>* {
+    background-color: lightblue;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+header,
+footer {
+    flex:1 1 100%;
+}
+
+header {
+    min-height: 5em;
+    order: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main,
+aside {
+    min-height: 12em;
+}
+
+main {
+    order: 3;
+    flex: 3;
+    padding: 2em 1em;
+}
+
+aside {
+    flex: 1;
+    order: 2;
+}
+
+footer {
+    min-height: 2em;
+    order: 4;
+}
+
+header p {
+    font-size: 2.5em;
+    font-weight: bold;
+    padding: 0 1em 0 0;
+}
+
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5em;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+header li {
+    display: block;
+}
+
+header a {
+    padding: 0 5px;
+    text-decoration: none;
+    color: blue;
+}
+
+main ul {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+aside li {
+    display: block;
+}
+
+aside a {
+    text-decoration: none;
+    color: purple
+}
+
+@media (max-width:500px) {
+    body {
+        flex-direction: column;
+    }
+
+    header,
+    header> nav ul {
+        display: block;
+    }
+
+    header> nav ul {
+        text-align: center;
+    }
+}
