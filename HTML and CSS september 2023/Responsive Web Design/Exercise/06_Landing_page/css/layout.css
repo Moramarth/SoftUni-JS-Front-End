@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body>header,
+body>main>section:not(.testimonials):not(.subscribe-form),
+body>footer {
+    background-image: url(../images/light-grey-terrazzo.png);
+    padding: 0 3em;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2:after {
+    display: block;
+    content: "";
+    width: 2em;
+    height: 4px;
+    background-color: black;
+    margin: 0 auto;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+    box-shadow: inset 0 1.4em 0.5em -1em rgb(0, 0, 0, 0.2);
+}
+
+.wrapper-inner {
+    max-width: 57em;
+    margin: 0 auto;
+}
+
+.brand-name {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: serif;
+    padding: 0;
+}
+
+section.subscribe-form {
+    background-color: #68347b;
+    text-align: center;
+    min-height: 8em;
+}
+
+section.testimonials {
+    background-image: url(../images/stripes-light.png);
+    padding: 0 3em;
+}

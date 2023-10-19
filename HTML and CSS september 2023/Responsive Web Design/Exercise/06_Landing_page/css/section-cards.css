@@ -1,0 +1,22 @@
+.section-cards .wrapper-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.section-cards .wrapper-inner .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2em;
+}
+
+.cards-container .card {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1em;
+}

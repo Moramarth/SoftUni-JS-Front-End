@@ -1,0 +1,44 @@
+.site-header nav {
+    display: none;
+}
+
+
+.site-header ul {
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+.site-header li {
+    display: block;
+}
+
+.site-header a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.site-title {
+    display: flex;
+    flex-direction: column;
+    max-width: 15em;
+}
+
+.site-title .brand-name{
+    color: #68347b;
+}
+
+.site-title .slogan {
+    text-transform: uppercase;
+    font-size: 0.52em;
+}
+
+.site-header .hamburger {
+    display: none;
+}
+
+#nav-toggle {
+    appearance: none;
+    pointer-events: none;
+}

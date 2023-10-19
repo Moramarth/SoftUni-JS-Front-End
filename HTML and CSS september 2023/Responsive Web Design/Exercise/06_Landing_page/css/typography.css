@@ -1,0 +1,96 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+
+
+html {
+    font: 12px/1.4 sans-serif;
+}
+
+@media (min-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 900px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1400px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+body,
+table,
+input,
+button {
+    font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1em;
+    font-family: serif;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 3.0em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+p,
+*+ul,
+*+ol {
+    padding-bottom: 1.5em;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.profile-picture {
+    width: 96px;
+    height: 96px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50%;
+}

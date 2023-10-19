@@ -1,0 +1,35 @@
+footer .info,
+footer .site-map,
+footer .contacts {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 30%;
+    overflow: hidden;
+    padding-top: 3em;
+}
+
+footer .brand-name {
+
+    padding: 1em 0 0.5em 0;
+}
+
+.site-map .lists {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-map ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.site-map li {
+    display: block;
+}
+
+.site-map a {
+    text-decoration: none;
+    color: black;
+}

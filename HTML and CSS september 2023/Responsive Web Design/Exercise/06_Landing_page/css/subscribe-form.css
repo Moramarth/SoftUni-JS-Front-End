@@ -1,0 +1,15 @@
+.subscribe-form h2 {
+    color: white;
+}
+
+.subscribe-form .wrapper-inner {
+    padding-top: 0.1em;
+    padding-bottom: 3em;
+}
+.subscribe-form input,
+.subscribe-form button {
+    padding: 0.3em 1.5em;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0.2em;
+}
