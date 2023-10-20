@@ -1,0 +1,33 @@
+.articles article {
+    display: flex;
+}
+
+.articles .article-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2em
+}
+
+.articles .article-header h4,
+.articles .article-body p,
+.articles .article-footer {
+    color: #89877b;
+}
+
+.articles article .media {
+    flex: 1 1 55%;
+}
+
+
+.articles .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.articles .article-body a {
+    color: #000;
+    font-weight: 700;
+}
+

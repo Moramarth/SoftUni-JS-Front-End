@@ -1,0 +1,26 @@
+.statistics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.statistics h4 {
+    font-weight: 500;
+}
+
+.statistics p:first-of-type {
+    color: #ff7543;
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.statistics p:first-of-type span {
+    padding-left: 0.3em;
+}
+
+.statistics p:last-of-type {
+    font-size: 0.75rem;
+    color: #89877b;
+}

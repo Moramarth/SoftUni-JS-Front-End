@@ -1,0 +1,51 @@
+.pricing .info {
+    flex: 1 1 31%;
+
+}
+
+.pricing .info h2 {
+    margin: 1em 0;
+}
+
+.pricing .info p {
+    color: #89877b
+}
+
+.pricing .card {
+    flex: 1 1 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.pricing .free {
+    background-color: #ff7c4c;
+}
+
+.pricing .paid {
+    background-color: #000;
+    color: #fff;
+}
+
+.pricing .card .price-tag {
+    font-size: 3em;
+}
+
+.pricing ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+.pricing li {
+    display: block;
+}
+
+.pricing li span {
+    font-weight: 700;
+}

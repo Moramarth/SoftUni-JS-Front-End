@@ -1,0 +1,12 @@
+.site-footer ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.site-footer li {
+    display: block;
+}
+
+.site-footer span {
+    display: none;
+}

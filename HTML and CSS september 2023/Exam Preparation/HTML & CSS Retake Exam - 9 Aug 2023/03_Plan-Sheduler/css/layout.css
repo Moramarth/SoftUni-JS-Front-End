@@ -1,0 +1,46 @@
+.wrapper-inner {
+    max-width: 90em;
+    margin: 0 auto;
+}
+
+.site-header .wrapper-outer,
+.articles,
+.site-footer {
+    background-color: #d9d9d9;
+}
+
+.site-header {
+    background-color: #d0cec8;
+}
+
+
+
+.pricing {
+    background-color: #f5f5f5;
+}
+
+.pricing .wrapper-inner {
+    background-color: #ffffff;
+    display: flex;
+    gap: 2em;
+    padding: 2em;
+}
+
+
+.achievements .wrapper-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3em;
+}
+
+.articles .wrapper-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 3em 0;
+}
+
+.site-footer .wrapper-inner {
+    padding: 2em 6em;
+}
