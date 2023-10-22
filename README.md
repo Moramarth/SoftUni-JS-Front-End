@@ -12,6 +12,7 @@
     * [Working with forms](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/HTML%20and%20CSS%20september%202023/Working%20with%20forms)
     * Exam Preparation
       - [HTML & CSS Retake Exam - 9 Aug 2023](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/HTML%20and%20CSS%20september%202023/Exam%20Preparation/HTML%20%26%20CSS%20Retake%20Exam%20-%209%20Aug%202023)
+    * [Regular Exam - 22 Oct 2023](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/HTML%20and%20CSS%20september%202023/Regular%20Exam%20-%2022-10-2023)
    
   - JS Front-End - october 2023
     * Course Homepage: https://softuni.bg/trainings/4240/js-front-end-october-2023
