@@ -1,0 +1,49 @@
+footer {
+    padding-top: 3em;
+}
+
+footer a {
+    text-decoration: none;
+    color: #9d8c87;
+    text-transform: uppercase;
+    /* font-size: 14px; */
+}
+
+footer hr {
+    background-color: #9d8c87;
+    height: 1px;
+    border: 0;
+    margin-top: 3em;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+footer li {
+    display: block;
+}
+
+footer p {
+    color: #9d8c87;
+    padding: 1em 0;
+}
+
+footer h5 {
+    color: white;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 2em;
+}
+
+footer .container1 {
+    display: flex;
+    gap: 6em
+}
+
+footer .container2 {
+    display: flex;
+    gap: 3em;
+}

@@ -1,0 +1,40 @@
+.wrapper-outer {
+    max-width: 120em;
+    margin: 0 auto;
+}
+
+.wrapper-inner {
+    max-width: 92em;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #01042e;
+}
+
+main {
+    background-color: white;
+}
+
+footer {
+    background-color: #171720;
+}
+
+
+header .wrapper-outer {
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: auto;
+    background-size: cover;
+    padding-bottom: 17em}
+
+main .wrapper-inner {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+}
+
+footer .wrapper-inner {
+    display: flex;
+    gap: 12em;
+}

@@ -1,0 +1,26 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5em 4em;
+}
+
+.navigation .logo {
+    max-width: 110px;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 2.5em;
+    transform: translateY(20%);
+}
+
+.navigation li {
+    display: block;
+}
+
+.navigation li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+}
