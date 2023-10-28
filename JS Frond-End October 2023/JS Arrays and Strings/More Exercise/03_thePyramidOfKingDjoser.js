@@ -24,9 +24,3 @@ function calculatePyramidMaterials(base, increment) {
     console.log(`Final pyramid height: ${Math.floor(layerCount * increment)}`);
 
 }
-
-// calculatePyramidMaterials(11,1)
-// calculatePyramidMaterials(11,0.75)
-// calculatePyramidMaterials(12,1)
-
-calculatePyramidMaterials(23,0.5)
