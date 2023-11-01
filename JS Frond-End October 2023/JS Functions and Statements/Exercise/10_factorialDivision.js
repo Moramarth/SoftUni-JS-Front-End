@@ -12,6 +12,3 @@ function factorialDivision(x, y) {
 
     console.log((factorialX / factorialY).toFixed(2));
 }
-
-factorialDivision(5, 2)
-factorialDivision(6, 2)
