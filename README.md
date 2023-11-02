@@ -17,3 +17,6 @@
   - [JS Front-End - October 2023](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023)
     * Course Homepage: https://softuni.bg/trainings/4240/js-front-end-october-2023
     * [JS Syntax Fundamentals](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20Syntax%20Fundamentals)
+    * [JS Arrays and Strings](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20Arrays%20and%20Strings)
+    * [JS Functions and Statements](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20Functions%20and%20Statements)
+    * [JS Objects and Classes](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20Objects%20and%20Classes)
