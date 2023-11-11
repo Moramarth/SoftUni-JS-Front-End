@@ -20,3 +20,5 @@
     * [JS Arrays and Strings](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20Arrays%20and%20Strings)
     * [JS Functions and Statements](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20Functions%20and%20Statements)
     * [JS Objects and Classes](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20Objects%20and%20Classes)
+    * [JS DOM Introductions](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20DOM%20Introduction)
+    * [JS DOM Events](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20DOM%20Events)
