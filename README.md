@@ -22,3 +22,6 @@
     * [JS Objects and Classes](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20Objects%20and%20Classes)
     * [JS DOM Introductions](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20DOM%20Introduction)
     * [JS DOM Events](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20DOM%20Events)
+    * [JS HTTP and Rest - Lab](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20HTTP%20and%20REST%20Lab)
+    * [JS Asynchronous Programming - Lab](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20Asynchronous%20Programming%20Lab)
+    * [JS HTTP and AJAX - Exercise](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Frond-End%20October%202023/JS%20HTTP%20and%20AJAX%20Exercise)
