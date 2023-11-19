@@ -80,9 +80,13 @@ describe('E2E tests', function () {
 
       await page.click('#loadBooks');
 
-      const books = await page.$$eval(`tbody tr td`, (t) =>
-        t.map((s) => s.textContent)
+     
+      const books = await page.$$eval(`tbody tr td`, (t) => 
+        t.map((s) => {
+          console.log(s)
+         return s.textContent})
       );
+      
 
       expect(books[0]).to.equal(data[0].title);
       expect(books[1]).to.equal(data[0].author);
@@ -105,10 +109,10 @@ describe('E2E tests', function () {
         page.click('text=Submit'),
       ]);
 
-      const postData = JSON.parse(request.postData());
-
+      const postData = JSON.parse(request.postData());  
       expect(postData.title).to.equal(data.title + '1');
       expect(postData.author).to.equal(data.author + '1');
+      
     });
 
     it('Edit should populate form with correct data', async () => {
