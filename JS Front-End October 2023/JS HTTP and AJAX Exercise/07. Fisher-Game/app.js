@@ -3,6 +3,7 @@ const registerForm = document.querySelector("#register-view").innerHTML;
 const loginForm = document.querySelector("#login-view").innerHTML;
 const homeView = document.querySelector("#home-view").innerHTML;
 
+
 //navbar links containers
 const logoutContainer = document.querySelector("#user");
 const noLoginContainer = document.querySelector("#guest");
@@ -13,6 +14,7 @@ const logoutBtn = document.querySelector("a#logout");
 const loginRedirectBtn = document.querySelector("a#login");
 const registerRedirectBtn = document.querySelector("a#register");
 
+const addBtn = document.querySelector("aside button.add")
 
 
 //API URLS
@@ -21,55 +23,50 @@ const catchesURL = "http://localhost:3030/data/catches"
 
 addEventTriggers();
 
-document.querySelector("#register-view").innerHTML = "";
-document.querySelector("#login-view").innerHTML = "";
-document.querySelector("#home-view").innerHTML = "";
+document.querySelector("#views").innerHTML = "";
 
-let currentUser = {
-    email: "guest",
-    accessToken: "",
-    _id: "",
-}
 loadHomePage();
 
 
 function loadHomePage() {
 
+    const accessToken = sessionStorage.getItem("accessToken")
+    const loggedUserEmail = sessionStorage.getItem("loggedUser");
 
-    clearMainContainerHTML();
-
-    document.querySelector("nav p span").textContent = currentUser.email
-
-    if (!currentUser.accessToken) {
-        logoutContainer.style.display = "none"
-        noLoginContainer.style.display = "inline-block"
+    if (loggedUserEmail) {
+        document.querySelector("nav p span").textContent = loggedUserEmail;
     } else {
+        document.querySelector("nav p span").textContent = "guest";
+    }
+
+    if (accessToken) {
         noLoginContainer.style.display = "none"
         logoutContainer.style.display = "inline-block"
-    }
-    let sectionHome = document.createElement("section");
-    sectionHome.id = "home-view"
-    let p = document.createElement("p")
-    p.textContent = "Click to load catches";
-    mainContainer.appendChild(p)
-    sectionHome.innerHTML += homeView
 
-    mainContainer.appendChild(sectionHome)
-    let catchesData = document.querySelector("fieldset#main");
-    catchesData.innerHTML = "";
-    catchesData.style.border = "none"
+    } else {
+        logoutContainer.style.display = "none"
+        noLoginContainer.style.display = "inline-block"
+
+    }
+
+    mainContainer.innerHTML = homeView
+    const addBtn = document.querySelector("aside button.add")
+    addBtn.addEventListener("click", createNewCatchItem);
+    clearCatchesContainer();
+
+    // let sectionHome = document.querySelector("main section");
+    // let p = document.createElement("p")
+    // p.textContent = "Click to load catches";
+    // mainContainer.insertBefore(p, secttionHome)
+
     const loadCatchesBtn = document.querySelector("aside button.load");
     loadCatchesBtn.addEventListener("click", loadCatches);
 
-    const addBtn = document.querySelector("aside button.add")
-    addBtn.addEventListener("click", createNewCatchItem);
-
-    if (!currentUser.accessToken) {
-        addBtn.disabled = true
-    } else {
+    if (accessToken) {
         addBtn.disabled = false
+    } else {
+        addBtn.disabled = true
     }
-
 
 }
 
@@ -127,9 +124,9 @@ async function requestRegister(event) {
         return
     }
 
-    currentUser.accessToken = response.accessToken
-    currentUser._id = response._id
-    currentUser.email = response.email
+    sessionStorage.setItem("accessToken", response.accessToken);
+    sessionStorage.setItem("loggedUser", response.email);
+    sessionStorage.setItem("id", response._id);
 
     loadHomePage()
 }
@@ -177,44 +174,34 @@ async function requestLogIn(event) {
         return
     }
 
-    currentUser.accessToken = response.accessToken
-    currentUser._id = response._id
-    currentUser.email = response.email
+    sessionStorage.setItem("accessToken", response.accessToken);
+    sessionStorage.setItem("loggedUser", response.email);
+    sessionStorage.setItem("id", response._id);
 
     loadHomePage()
 }
 
 async function logoutUser() {
-    let response = await fetch(`${usersURL}/logout`, {
+    await fetch(`${usersURL}/logout`, {
         method: "GET",
         headers: {
-            "X-Authorization": currentUser.accessToken
+            "X-Authorization": sessionStorage.getItem("accessToken")
         }
     })
 
-    if (response.status === 204) {
-        currentUser = {
-            email: "guest",
-            accessToken: "",
-            _id: "",
-        }
-        loadHomePage()
-    } else {
-        return
-    }
+
+    sessionStorage.removeItem("accessToken");
+    sessionStorage.removeItem("loggedUser");
+    sessionStorage.removeItem("id");
+    loadHomePage()
 
 
 }
 
 // CRUD
 async function loadCatches() {
-    mainContainer.querySelector("p").style.display = "none"
-
-
-    let catchesData = document.querySelector("fieldset#main");
-    catchesData.innerHTML = "<legend>Catches</legend>"
-    catchesData.style.border = "" //take border from css
-    let wrapperInner = document.createElement("div")
+    clearCatchesContainer()
+    let wrapperInner = document.querySelector("fieldset#main div")
     wrapperInner.setAttribute("id", "catches")
     let allCatches = await ((await fetch(catchesURL)).json())
 
@@ -222,13 +209,10 @@ async function loadCatches() {
     for (let item of allCatches) {
         wrapperInner.appendChild(createCatchContainer(item))
     }
-    catchesData.appendChild(wrapperInner)
-
-
 }
 
 function createCatchContainer(item) {
-    const isOwner = currentUser._id === item._ownerId
+    const isOwner = sessionStorage.getItem("id") === item._ownerId
     let container = document.createElement("div");
     container.setAttribute("class", "catch")
     container.innerHTML = `<label>Angler</label>
@@ -269,6 +253,7 @@ function createCatchContainer(item) {
 
 async function createNewCatchItem(event) {
     event.preventDefault()
+
     const data = new FormData(document.querySelector("form#addForm"));
     const details = Object.fromEntries(data)
     if (Object.values(details).some(value => value == "")) {
@@ -282,16 +267,18 @@ async function createNewCatchItem(event) {
         location: details.location,
         bait: details.bait,
         captureTime: details.captureTime,
-        owner: currentUser._id
+        owner: sessionStorage.getItem("id")
     })
 
     await fetch(catchesURL, {
         method: "POST",
         body: newCatchItem,
         headers: {
-            "X-Authorization": currentUser.accessToken
+            "X-Authorization": sessionStorage.getItem("accessToken"),
+            "Content-Type": "application/json"
         }
     })
+    await loadCatches();
 }
 
 async function updateCatchInfo(event) {
@@ -306,36 +293,38 @@ async function updateCatchInfo(event) {
         acc[curr.className] = curr.value
         return acc
     }, {})
-    entryToUpdate.owner = currentUser._id
+    entryToUpdate.owner = sessionStorage.getItem("id")
 
 
-    let result = fetch(`${catchesURL}/${idforUpdate}`, {
+    fetch(`${catchesURL}/${idforUpdate}`, {
         method: "PUT",
         body: JSON.stringify(entryToUpdate),
         headers: {
-            "X-Authorization": currentUser.accessToken,
+            "X-Authorization": sessionStorage.getItem("accessToken"),
             "Content-Type": "application/json"
         }
     })
 
-    return result.done
+    await loadCatches()
 
 }
 
-function deleteCatch(event) {
-
-    let currentBtn = event.target
-    let idforDelete = currentBtn.getAttribute("data-id")
-
-    fetch(`${catchesURL}/${idforDelete}`, {
-        method: "DELETE",
-        headers: {
-            "X-Authorization": currentUser.accessToken
+async function deleteCatch(event) {
+    const response = await fetch(
+        `http://localhost:3030/data/catches/${event.target.dataset.id}`,
+        {
+            method: "DELETE",
+            headers: {
+                "X-Authorization": sessionStorage.getItem("accessToken"),
+            },
         }
-    })
+    );
 
-
-
+    if (!response.ok) {
+        throw new Error(response.statusText);
+    } else {
+        await loadCatches();
+    }
 }
 
 // utilities
@@ -344,10 +333,19 @@ function addEventTriggers() {
     logoutBtn.addEventListener("click", logoutUser)
     loginRedirectBtn.addEventListener("click", loadLoginPage);
     registerRedirectBtn.addEventListener("click", loadRegisterPage);
+
 }
 
 function clearMainContainerHTML() {
     mainContainer.innerHTML = ""
+}
+
+function clearCatchesContainer() {
+    const catchesDivElem = document.getElementById("catches");
+    if (catchesDivElem) {
+        Array.from(catchesDivElem.children).forEach((child) => child.remove());
+    }
+
 }
 
 
