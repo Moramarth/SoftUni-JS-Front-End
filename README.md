@@ -25,3 +25,5 @@
     * [JS HTTP and Rest - Lab](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Front-End%20October%202023/JS%20HTTP%20and%20REST%20Lab)
     * [JS Asynchronous Programming - Lab](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Front-End%20October%202023/JS%20Asynchronous%20Programming%20Lab)
     * [JS HTTP and AJAX - Exercise](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Front-End%20October%202023/JS%20HTTP%20and%20AJAX%20Exercise)
+    * Exam Preparation
+      - [JS Front-End Regular Exam - 8 Apr 2023](https://github.com/Moramarth/SoftUni-JS-Front-End/tree/main/JS%20Front-End%20October%202023/Exam%20Preparation/JS%20Front-End%20Regular%20Exam%20-%208%20Apr%202023)
