@@ -37,7 +37,6 @@ function attachEvents() {
 async function loadTasks() {
     clearTaskSections()
     let tasks = await ((await fetch(apiURL)).json())
-    console.log(tasks)
     Object.values(tasks).map(task => separateSections(task))
 }
 
@@ -77,18 +76,17 @@ async function handleItemChange(event) {
 
     if (currentTask.status === "Done") {
         await closeTask(currentTask._id)
-        return true
+        return
     };
 
-    currentTask.status = setByStatus[currentTask.status].nextStatus
-
-    await fetch(`${apiURL}${event.target.dataset.id}`, {
+    await fetch(`${apiURL}${currentTask._id}`, {
         method: "PATCH",
         body: JSON.stringify({
-            currentTask
+            status: setByStatus[currentTask.status].nextStatus
         })
 
     })
+
     await loadTasks()
 }
 
