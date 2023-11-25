@@ -16,8 +16,8 @@ async function loadAllBooks() {
   const booksData = await fetch(apiURL);
   allBooksData = await booksData.json();
   tableBody.innerHTML = "";
-  Object.values(allBooksData).map(book => {
-    const row = createTableRow(book);
+  Object.entries(allBooksData).map(([_id, book]) => {
+    const row = createTableRow(_id, book);
     tableBody.appendChild(row);
   })
 
@@ -25,7 +25,7 @@ async function loadAllBooks() {
 }
 
 
-function createTableRow(bookInfo) {
+function createTableRow(_id, bookInfo) {
   let newRow = document.createElement("tr");
 
   let title = document.createElement("td");
@@ -38,16 +38,17 @@ function createTableRow(bookInfo) {
 
 
   let newDataCell = document.createElement("td");
-  newDataCell.appendChild(createActionBtn("Edit"));
-  newDataCell.appendChild(createActionBtn("Delete"));
+  newDataCell.appendChild(createActionBtn("Edit", _id));
+  newDataCell.appendChild(createActionBtn("Delete", _id));
   newRow.appendChild(newDataCell);
 
   return newRow
 }
 
-function createActionBtn(text) {
+function createActionBtn(text, _id) {
   let newActionBtn = document.createElement("button")
   newActionBtn.textContent = text
+  newActionBtn.setAttribute("data-id", _id)
 
   if (text === "Edit") newActionBtn.addEventListener("click", editBookInfo);
   else newActionBtn.addEventListener("click", deleteBook);
@@ -57,7 +58,8 @@ function createActionBtn(text) {
 
 function editBookInfo(event) {
   submitBtn.textContent = "Save";
-  bookID = processCurrentRow(event.target);
+  bookID = event.target.dataset.id
+  console.log(bookID)
   bookIDForEditing = bookID;
 
   titleInput.value = allBooksData[bookID].title
@@ -70,25 +72,20 @@ function deleteBook(event) {
 
 }
 
-function processCurrentRow(btn) {
-  let currentRow = btn.parentElement.parentElement;
-  let bookTitle = currentRow.querySelector("td:first-child").textContent;
-  let bookID = Object.keys(allBooksData).filter(key => allBooksData[key].title === bookTitle)[0];
-
-  return bookID
-}
-
-function handleSubmission() {
+function handleSubmission(event) {
+  event.preventDefault()
   const isEditing = submitBtn.textContent === "Save"
 
   if (isEditing) {
 
     let editedBook = handleBookData();
+    editedBook._id = bookIDForEditing
+
     if (!editedBook) return;
 
     fetch(`${apiURL}/${bookIDForEditing}`, {
       method: "PUT",
-      body: editedBook,
+      body: JSON.stringify(editedBook),
       headers: {
         "Content-Type": "application/json"
       }
@@ -104,7 +101,7 @@ function handleSubmission() {
   if (!newBook) return;
   fetch(apiURL, {
     method: "POST",
-    body: newBook,
+    body: JSON.stringify(newBook),
     headers: {
       "Content-Type": "application/json"
     }
@@ -115,16 +112,16 @@ function handleSubmission() {
 
 }
 
-function handleBookData() {
+function handleBookData(book) {
   let BookTitle = titleInput.value;
   let BookAuthor = authorInput.value;
 
   if (!BookAuthor || !BookTitle) return;
 
-  return JSON.stringify({
+  return {
     title: BookTitle,
     author: BookAuthor
-  })
+  }
 }
 
 function clearInput() {

@@ -9,23 +9,28 @@ const setByStatus = {
     "ToDo": {
         section: toDoSection,
         btnText: "Move to In Progress",
-        nextStatus: "In Progress",
     },
     "In Progress": {
         section: InProgressSection,
         btnText: "Move to Code Review",
-        nextStatus: "Code Review",
     },
     "Code Review": {
         section: codeReviewSection,
         btnText: "Move to Done",
-        nextStatus: "Done",
     },
     "Done": {
         section: doneSection,
         btnText: "Close",
-        nextStatus: null,
     },
+
+}
+
+const setNextStatus = {
+
+    "Move to In Progress": "In Progress",
+    "Move to Code Review": "Code Review",
+    "Move to Done": "Done",
+    "Close": null,
 
 }
 
@@ -72,17 +77,18 @@ function separateSections(task) {
 
 }
 async function handleItemChange(event) {
-    let currentTask = await ((await fetch(`${apiURL}${event.target.dataset.id}`)).json())
+    let btn = event.target
+    currentTaskID = event.target.dataset.id
 
-    if (currentTask.status === "Done") {
-        await closeTask(currentTask._id)
+    if (btn.textContent === "Close") {
+        await closeTask(currentTaskID)
         return
     };
 
-    await fetch(`${apiURL}${currentTask._id}`, {
+    await fetch(`${apiURL}${currentTaskID}`, {
         method: "PATCH",
         body: JSON.stringify({
-            status: setByStatus[currentTask.status].nextStatus
+            status: setNextStatus[btn.textContent]
         })
 
     })
