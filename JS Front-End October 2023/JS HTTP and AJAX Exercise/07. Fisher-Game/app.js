@@ -214,7 +214,7 @@ async function loadCatches() {
 function createCatchContainer(item) {
     const isOwner = sessionStorage.getItem("id") === item._ownerId
     let container = document.createElement("div");
-    container.setAttribute("class", "catch")
+    container.classList.add("catch")
     container.innerHTML = `<label>Angler</label>
     <input type="text" class="angler" value="${item.angler}" ${!isOwner ? 'disabled' : ''}>
     <label>Weight</label>
@@ -226,27 +226,31 @@ function createCatchContainer(item) {
     <label>Bait</label>
     <input type="text" class="bait" value="${item.bait}" ${!isOwner ? 'disabled' : ''}>
     <label>Capture Time</label>
-    <input type="number" class="captureTime" value="${item.captureTime}" ${!isOwner ? 'disabled' : ''}>`
+    <input type="number" class="captureTime" value="${item.captureTime}" ${!isOwner ? 'disabled' : ''}>
+    <button class="update" data-id="${item._id}" ${!isOwner ? 'disabled' : ''}>Update</button>
+    <button class="delete" data-id="${item._id}" ${!isOwner ? 'disabled' : ''}>Delete</button>`
 
-    let updateBtn = document.createElement("button");
-    updateBtn.textContent = "Update";
-    updateBtn.classList.add("update");
-    updateBtn.setAttribute("data-id", item._id)
+    // let updateBtn = document.createElement("button");
+    // updateBtn.textContent = "Update";
+    // updateBtn.classList.add("update");
+    // updateBtn.setAttribute("data-id", item._id)
+    let updateBtn = container.querySelector(".update")
     updateBtn.addEventListener("click", updateCatchInfo)
 
-    let deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Delete";
-    deleteBtn.classList.add("delete")
-    deleteBtn.setAttribute("data-id", item._id)
+    // let deleteBtn = document.createElement("button");
+    // deleteBtn.textContent = "Delete";
+    // deleteBtn.classList.add("delete")
+    // deleteBtn.setAttribute("data-id", item._id)
+    let deleteBtn = container.querySelector(".delete")
     deleteBtn.addEventListener("click", deleteCatch)
 
-    if (!isOwner) {
-        updateBtn.disabled = true
-        deleteBtn.disabled = true
-    }
+    // if (!isOwner) {
+    //     updateBtn.disabled = true
+    //     deleteBtn.disabled = true
+    // }
 
-    container.appendChild(updateBtn)
-    container.appendChild(deleteBtn)
+    // container.appendChild(updateBtn)
+    // container.appendChild(deleteBtn)
 
     return container
 }
